@@ -1,0 +1,466 @@
+## Revisão - Prova 2
+
+| GRR | NOME |
+| ------ | ------ |
+| 2017208552 | Bruno Leandro Diniz |
+
+### Estimativas de Software
+- Quanto tempo é necessário para completar uma atividade, etapa ou projeto?
+    - Qual é o custo total de uma atividade, etapa ou projeto?
+        - Quantos recursos serão necessários para desenvolver uma atividade, etapa ou projeto?
+            - Quanto trabalho é necessário para completar uma atividade, etapa ou projeto?
+                - Qual o tamanho da atividade, etapa ou projeto?
+
+- Qual o tamanho da atividade, etapa ou projeto?
+    - Quanto trabalho é necessário para completar uma atividade, etapa ou projeto?
+        - Quantos recursos serão necessários para desenvolver uma atividade, etapa ou projeto?
+            - Qual é o custo total de uma atividade, etapa ou projeto?
+                - Quanto tempo é necessário para completar uma atividade, etapa ou projeto?
+
+- OBJETIVO (Grande desafio -> Incerteza da Estimativa):
+    - Estimar trabalho, prazos e custos (confiáveis, com o menor risco possível)
+    - E (T, P, C) = f (Tamanho na métrica selecionada – LOC, FP, UCP)
+    - Transformar mágica em processo sistemático que ofereça estimativas com riscos aceitáveis
+    - Estimativa de SW exige experiência, informações históricas e coragem
+    - Informações Históricas = Experiência Explicitada
+
+- Modelo de Processo de Estimativa
+    - Coletar os requisitos iniciais
+    - Estimar o tamanho do produto
+    - Estimar o esforço
+    - Produzir o cronograma
+    - Estimar o custo
+    - Aprovar as estimativas
+    - Desenvolver o produto
+
+- Estimativa de TAMANHO
+    - Escolha da Técnica
+        - Nível de informação sobre o projeto
+        - Fase do ciclo de vida do desenvolvimento
+        - Esforço requerido para a estimativa
+        - Métrica: Desenvolvimento de Software, mapeamento de processos, requisitos
+        - Base histórica
+    - Método Direto
+        - Baseado na opinião dos especialistas, experiência, intuição
+    - Método Derivado
+        - Baseado em algoritmo que produz estimativa em função de atributos de software que podem ser correlacionados com medidas:
+            - Criar seu próprio modelo ajustando um dos modelos de mercado
+            - Criar fatores próprios de multiplicação das fórmulas acima (calibração)
+
+    - Técnica de DECOMPOSIÇÃO (aplicada para qualquer método)
+        - Dividir um problema complexo em um conjunto de problemas mais simples:
+            - Funções
+            - Módulos
+            - Fases
+            - Equipes
+            - Stakeholders
+        - EAP ou WBS (Work Breakdown Structure) do PMBOK
+        - Resolver cada um deles individualmente (estimar tamanho para cada função, usada em conjunto com as demais técnicas)
+    
+    - Método DIRETO
+        - Estimativa por Analogia
+        - Experiência do Gerente de Projetos (GP) e sua equipe em projetos semelhantes
+        - Dados históricos de projetos anteriores (Ativos de Processos Organizacionais)
+        - Informações de mercado (Base de dados de outras organizações, benchmarking -> comparar com outras empresas da mesma área)
+        - É a técnica mais confiável e usada
+        - Estabelece e considera: Restrições, Premissas e Riscos
+        - "Quanto tempo uma pessoa leva para percorrer a pé uma distância de 20km?"
+    
+    - Métricas de TAMANHO
+        - Linhas de código
+        - Pontos de Função
+        - Ponto de Caso de Uso
+        - Story Points
+
+    - Estimar Esforço, Recursos e Prazos
+        - Taxas de Entrega / Produtividade + Vinculações
+        - Fórmula de Capers Jones
+        - Método COCOMO
+    
+- TRABALHO, DURAÇÃO E CUSTO = f(tamanho)
+    - Estimado o tamanho, determinar o trabalho, duração e custo a partir de funções matemáticas simples com base na PRODUTIVIDADE ou TAXA DE ENTREGA
+        - Relação entre o trabalho (Pessoa hora(Ph) ou máquina hora (Mh) e a entrega resultante deste trabalho: Unidade de Trabalho (métrica))
+        - Produtividade = Trabalho(Ph) / Unidade de Trabalho -> Trabalho = Tamanho x Produtividade
+        - Taxa de Entrega = Unidades de Trabalho / Trabalho -> Trabalho = Tamanho / Taxa de Entrega
+        - Custo = Trabalho x Custo dos recursos por unidade de trabalho + Custo de materiais
+        - Duração = Trabalho / Recursos
+    
+    - Exercício1: Qual o esforço para desenvolver um módulo de 6 use cases, sendo a produtividade de 12Ph/UC?
+        - Qual será o custo da atividade considerando que $20/Ph?
+        - Se alocarmos 2 recursos, qual será a duração da atividade?
+
+    - Exercício 2: Desenvolver um módulo de 250 PF(Pontos de função), produtividade de 4Ph/PF
+        - Qual a duração em dias com 5 recursos alocados (8h/dia)?
+        - Quantos recursos são necessários para desenvolver em 20 dias?
+
+    - Exercício 3: Lançar 640m de fibra, taxa de entrega de 4m/Ph
+        - Qual a duração em dias com 2 recursos alocados?
+        - Quantos recursos são necessários para concluir a atividade em 4 dias?
+
+- Método DELPHI (Planning Pocker no SCRUM)
+    - Processo interativo para melhorar estimativas individuais
+    - Ciclos de estimativas individuais entre os especialistas do grupo
+    - Estimativa final de cada função por consenso
+
+- Método Three-Point ou PERT ou Probabilístico
+    - Permite utilizar três estimativas para definir uma faixa aproximada para estimativa de uma atividade
+    - Exemplo de estimativa de Tamanho t
+        - Tamanho otimista (to): Atribuído com base no melhor cenário
+        - Tamanho mais provável (tm): É o tamanho em condições normais de execução, considerando sua produtividade média
+        - Tamanho perssimista (tp): Atribuído com base no pior cenário
+    - O Tamanho esperado (te) pode ser calculado segundo uma média ponderada, também chamado de mediana
+        - te = (to + 4tm + tp) / 6
+        - O valor da mediana é o valor central de uma distribuição, ou seja, há 50% de probabilidade da atividade ser cumprida antes deste prazo e 50% de ser concluída depois deste prazo.
+    - Desvio Padrão e Probabilidade - Estimativa por atividade
+        - Dp = (tp - to) / 6
+    - Cálculo da duração do projeto pelas atividades do Caminho Crítico Variância
+        - Variância V = ( (tp-to)/6 )^2
+
+- Métodos Derivados
+    - Estimativa paramétrica
+        - Usa algorítimos matemáticos com coeficientes ajustados em função de projetos anteriores e as "lições aprendidas"
+        - Normalmente usada quando é possível determinar o tamanho da atividade usando uma métrica convencionada e aceita
+        - Exemplos:
+            - Ponto por Função
+                - Contagem indicativa modelo NESMA
+                - Contagem estimativa modelo NESMA
+                - Contagem detalhada
+                - Fórmula de Capers Jones
+            - Pontos de Caso de Uso
+            - Modelo COCOMO
+
+
+### Gerenciamento de Cronograma - Vinculações
+- Sequenciar Atividades
+    - Identificação e documentação dos relacionamentos lógicos entre as atividades do cronograma
+        - Cada atividade e marco, com exceção do primeiro e do último, são conectados a pelo menos um predecessor e um sucessor
+        - O uso de tempo de antecipação ou de espera pode ser necessário entre as atividades para dar suporte a um cronograma de projeto realista e executável
+
+    - Entradas > Ferramentas e Técnicas > Saídas
+    - Entradas:
+        - Plano de Gerenciamento de Cronograma
+        - Lista de Atividades
+        - Atributos de Atividades
+        - Lista de Marcos de referência
+        - Especificação de escopo do projeto
+        - Ativos de Processo Organizacionais
+        - Fatores Ambientais da empresa
+    - Ferramentas e Técnicas:
+        - Determinação de dependências (obrigatórias, arbitradas e externas)
+        - Aplicação de antecipações e esperas (Latências)
+        - Método do diagrama de Precedência (MDP)
+    - Saídas:
+        - Diagrama de Rede
+        - Atualizações aos Documentos de Projetos
+    
+    - TIPOS DE VINCULAÇÕES
+        - Término para início (TI) / Finish-to-start(FS): O início da atividade sucessora depende do término da atividade predecessora.
+            - Latência = 0 -> A Atividade B deve iniciar logo após o término da atividade A
+            - Latência < 0 -> A atividade B deve iniciar n horas antes do término da atividade A
+            - Latência > 0 -> A atividade B deve iniciar n dias depois do término da atividade A
+
+        - Término para término (TT)/ Finish-to-finish(FF) : O término da atividade sucessora depende do término da atividade predecessora.
+            - Latência = 0 -> A Atividade B deve terminar junto com a atividade A
+            - Latência < 0 -> A atividade B deve terminar 2 diasantes do término da atividade A
+            - Latência > 0 -> A atividade B deve terminar 3 dias depois do término da atividade A
+        
+        - Início para início (II) / Start-to-start(SS): O início da atividade sucessora depende do início da atividade predecessora.
+            - Latência = 0 -> A Atividade B deve iniciar junto com a atividade A
+            - Latência < 0 -> A atividade B deve iniciar 2 dias antes do início da atividade A
+            - Latência > 0 -> A atividade B deve iniciar 3 dias depois do início da atividade A
+
+        - Início para término (IT) / Start-to-finish (SF) : O término da atividade sucessora depende do início da atividade predecessora.
+            - Latência = 0 -> A Atividade B deve terminar junto com o início da atividade A
+            - Latência < 0 -> A atividade B deve terminar 2 dias antes de iniciar a atividade A
+            - Latência > 0 -> A atividade B deve terminar 3 dias depois de iniciar a atividade A
+
+
+### Gerenciamento de Custos em projetos de software
+- O gerenciamento dos custos do projeto inclui os processos envolvidos em planejamento, estimativas, orçamentos, financiamentos, gerenciamento e controle dos custos, de modo que o projeto possa ser realizado dentro do orçamento aprovado
+- Deve considerar também:
+    - A visão das partes interessadas quanto à apropriação e controle dos custos
+    - Os custos do resultado do projeto (fase de operação)
+
+- Planejar o gerenciamento de custos
+    - Definir como os custos do projeto serão estimados, orçados, gerenciados, monitorados e controlados.
+    - Entradas > Ferramentas e Técnicas > Saídas
+    - Entradas:
+        - Fatores ambientais da empresa
+        - Ativos de processos organizacionais
+        - Plano de Gerenciamento do Projeto
+            - Plano de gerenciamento do cronograma
+            - Plano de gerenciamento dos riscos
+        - Termo de abertura do projeto
+    - Ferramentas e Técnicas:
+        - Opinião especializada
+        - Análise de dados
+        - Reuniões
+    - Saídas:
+        - Plano de gerenciamento de custos
+
+- Estimar os Custos
+    - Entrada: Termo de abertura do projeto, Plano de gerenciamento do projeto, Fatores ambientais da empresa e Ativos de processos organizacionais
+    - Técnica: Planejar o Gerenciamento dos Custos
+    - Saída: Plano de Gerenciamento do projeto
+    - Entradas:
+        - 1. Plano de gerenciamento do projeto
+            - Plano de gerenciamento dos custos
+            - Plano de gerenciamento da qualidade
+            - Linha de base do escopo
+        - 2. Documentos do projeto
+            - Registro das lições aprendidas
+            - Cronograma do projeto
+            - Requisitos de recursos
+            - Registro dos riscos
+        - 3. Fatores ambientais da empresa
+        - 4. Ativos de processos organizacionais
+    - Ferramentas e Técnicas:
+        - 1. Opinião especializada
+        - 2. Estimativa análoga
+        - 3. Estimativa paramétrica
+        - 4. Estimativa “bottom-up”
+        - 5. Estimativa de três pontos
+        - 6. Análise de dados
+            - Análise de alternativas
+            - Análise de reservas (Contingências)
+            - Custo da qualidade
+        - 7. Sistema de informações de gerenciamento de projetos
+        - 8. Tomada de decisões
+    - Saídas:
+        - 1. Estimativa de custos
+        - 2. Bases das estimativas
+        - 3. Atualizações de documentos do projeto
+            - Registro de premissas
+            - Registro das lições aprendidas
+            - Registro dos riscos
+
+- Determinar o Orçamento
+    - O processo de agregação dos custos estimados de atividades individuais ou pacotes de trabalho para estabelecer uma linha de base autorizada dos custos.
+    - Orçamento: Estimativa de recursos financeiros ao longo do cronograma (Fluxo de Caixa)
+    - Entradas:
+        - 1. Plano de gerenciamento do projeto
+            - Plano de gerenciamento dos custos
+            - Plano de gerenciamento dos recursos
+            - Linha de base do escopo
+        - 2. Documentos do projeto
+            - Bases das estimativas
+            - Estimativa de custos
+            - Cronograma do projeto
+            - Registro dos riscos
+        - 3. Documentos de negócios
+            - Business case
+            - Plano de gerenciamento de benefícios
+        - 4. Acordos
+        - 5. Fatores ambientais da empresa
+        - 6.  Ativos de processos organizacionais
+    - Ferramentas e Técnicas:
+        - 1. Opinião especializada
+        - 2. Agregação de custos
+        - 3. Análise de dados
+            - Análise de reservas
+        - 4. Revisão de informações históricas
+        - 5. Reconciliação dos limites de recursos financeiros
+        - 6. Financiamento
+    - Saídas:
+        - 1. Linha de base dos custos
+        - 2. Requisitos de recursos financeiros do projeto
+        - 3. Atualizações de documentos do projeto
+            - Estimativa de custos
+            - Cronograma do projeto
+            - Registro de riscos
+
+- Controlar os Custos
+    - Monitoramento do progresso do projeto para atualização do seu orçamento e gerenciamento das mudanças feitas na linha de base dos custos
+        - Apontar, medir e comparar o executado com o planejado
+        - Tomar ações corretivas, sugerir soluções e/ou solicitar mudanças
+        - Comunicar e problemas e riscos com respectivas sugestões de solução/mitigação
+    - Entradas:
+        - 1. Plano de gerenciamento do projeto
+            - Plano de gerenciamento dos custos
+            - Linha de base dos custos
+            - Linha de base da medição do desempenho
+        - 2. Documentos do projeto
+            - Registro das lições aprendidas
+        - 3. Requisitos de recursos financeiros do projeto
+        - 4. Dados de desempenho do trabalho
+        - 5. Ativos de processos organizacionais
+    - Ferramentas e Técnicas:
+        - 1. Opinião especializada
+        - 2. Análise de dados
+            - Análise de valor agregado
+            - Análise de variação
+            - Análise de tendências
+            - Análise de reservas
+        - 3. Índice de desempenho para término
+        - 4. Sistema de informações de gerenciamento de projetos
+    - Saídas:
+        - 1. Informações sobre o desempenho do trabalho
+        - 2. Previsões de custos
+        - 3. Solicitações de mudança
+        - 4. Atualizações do plano de gerenciamento do projeto
+            - Plano de gerenciamento dos custos
+            - Linha de base dos custos
+            - Linha de base da medição do desempenho
+        - 5. Atualizações de documentos do projeto
+            - Registro de premissas
+            - Bases das estimativas
+            - Estimativa de custos
+            - Registro das lições aprendidas
+            - Registro dos riscos
+
+
+### Controle de projetos
+- O controle do projeto inclui todas as atividades que o mantém em andamento em direção à meta. Essas atividades incluem:
+    - Medição de progresso: Geralmente, a medição de progresso logo identifica qualquer problema, facilitando sua solução. Também é um mecanismo de retorno, validando as estimativas de planejamento e do equilíbrio entre custo, cronograma e qualidade;
+    - Comunicação: A comunicação é fundamental no controle do projeto, já que mantém todos os participantes coordenados e cientes do progresso e de suas alterações;
+    - Intervenção corretiva: Consiste nas respostas do dia-a-dia a todos os obstáculos e aos problemas que um projeto poderá vir a ter.
+
+- Com o acompanhamento, pode-se determinar as atividades iniciadas antes ou depois do planejamento, as que ultrapassaram o orçamento original, as que demoraram mais tempo do que o previsto, e assim por diante. Este procedimento é realizado paralelamente ao planejamento e à execução do projeto.
+
+- LINHA DE BASE
+    - Linha de base: É um conjunto de estimativas-chaves originais sobre o projeto.
+    - Quando criar uma base? Após obter a aprovação do Plano do Projeto
+    - Gravando a linha de base do projeto
+        - 1. Acesse o menu Projeto / Definir linha de base;
+        - 2. Escolha a opção Definir linha de base;
+        - 3. Escolha o modo de exibição Gantt de Controle;
+    - A partir deste ponto, passaremos a usar a visão de Controle do Gantt, mais adequada ao processo, incluindo a linha de Andamento
+        - Linha de andamento: É uma representação visual do andamento do projeto, exibida no modo
+        - Gráfico de Gantt. Para determinada data de andamento, o Project desenha uma linha que conecta tarefas em andamento. Deste modo, ele cria um gráfico com picos apontando para a esquerda para o trabalho que está atrasado e picos apontando para a direita para o trabalho que está adiantado
+    - Exibir a linha de Andamento
+        - 1. Posicione o cursor na região do gráfico de Gantt
+        - 2. Clique no botão direito do mouse
+        - 3. Selecione Linha de Andamento
+        - 4. Configure sua linha de Andamento na caixa de diálogo aberta
+
+- DATA DE STATUS
+    - Geralmente, você relata o progresso do seu projeto em um dia que você definiu. Por exemplo, se você quiser valores de relatório para o último dia do mês, defina a data de status para o último dia do mês. A data de status quase nunca é a data atual, portanto, você precisa defini-la:
+    - Definir Data de status
+        - 1. No menu Projeto, selecione a aba Data de status
+        - 2. Selecione a data de status desejada
+        - 3. Você pode mudar a data de status sempre que for necessário
+
+
+### Gestão Ágil de Projetos – SCRUM
+- Scrum é um framework leve que ajuda pessoas, times e organizações a gerar valor por meio de soluções adaptativas para problemas complexos.
+- Em suma, Scrum requer um Scrum Master para promover um ambiente onde:
+    - 1. Um Product Owner ordena o trabalho para um problema complexo em um Product Backlog.
+    - 2. O Scrum Team transforma uma seleção do trabalho em um incremento de valor durante uma Sprint.
+    - 3. O Scrum Team e seus stakeholders inspecionam os resultados e se ajustam para a próxima Sprint.
+    - 4. Repita
+
+- SCRUM TEAM
+    - Developers
+        - Developers são as pessoas do Scrum Team que estão comprometidas em criar qualquer aspecto de um Incremento utilizável a cada Sprint.
+        - As habilidades específicas necessárias pelos Developers geralmente são amplas e variam de acordo com o domínio de trabalho. No entanto, os Developers são sempre responsáveis por:
+            - Criar um plano para a Sprint, o Sprint Backlog;
+            - Introduzir gradualmente qualidade aderindo a uma Definição de Pronto;
+            - Adaptar seu plano a cada dia em direção à meta da Sprint; e,
+            - Responsabilizar-se mutuamente como profissionais.
+    
+    - Product Owner
+        - O Product Owner é responsável por maximizar o valor do produto resultante do trabalho do Scrum Team. A forma como isso é feito pode variar amplamente entre organizações, Scrum Teams e indivíduos.
+        - O Product Owner também é responsável pelo gerenciamento eficaz do Product Backlog, que inclui: 
+            - Desenvolver e comunicar explicitamente a meta do produto;
+            - Criar e comunicar claramente os itens do Product Backlog;
+            - Ordenar os itens do Product Backlog; e,
+            - Garantir que o Product Backlog seja transparente, visível e compreensível. 
+        - O Product Owner pode fazer o trabalho acima ou pode delegar a responsabilidade a outros. Independentemente disso, o Product Owner ainda é o responsável.
+        - Para que os Product Owners tenham sucesso, toda a organização deve respeitar suas decisões.
+
+    - Scrum Master
+        - O Scrum Master é responsável por estabelecer o Scrum conforme definido no Guia do Scrum. Eles fazem isso ajudando todos a entender a teoria e a prática do Scrum, tanto no Scrum Team quanto na organização.
+        - O Scrum Master é responsável pela eficácia do Scrum Team. Eles fazem isso permitindo que o Scrum Team melhore suas práticas, dentro do framework Scrum
+        - Scrum Masters são verdadeiros líderes que servem ao Scrum Team e à organização como um todo.
+        
+        - O Scrum Master serve ao Scrum Team de várias maneiras, incluindo:
+            - Treinar os membros do time em autogerenciamento e cross-funcionalidade;
+            - Ajudar o Scrum Team a se concentrar na criação de incrementos de alto valor que atendem à Definição de Pronto; 
+            - Provocando a remoção de impedimentos ao progresso do Scrum Team; e,
+            - Garantir que todos os eventos Scrum ocorram e sejam positivos, produtivos e mantidos dentro do Timebox
+
+        - O Scrum Master serve o Product Owner de várias maneiras, incluindo:
+            - Ajudar a encontrar técnicas para a definição eficaz de meta do Produto e gerenciamento do Product Backlog;
+            - Ajudar o Scrum Team a entender a necessidade de itens do Product Backlog claros e concisos;
+            - Ajudar a estabelecer o planejamento empírico do produto para um ambiente complexo; e,
+            - Facilitar a colaboração dos stakeholder, conforme solicitado ou necessário.
+
+        - O Scrum Master serve a organização de várias maneiras, incluindo:
+            - Liderar, treinar e orientar a organização na adoção do Scrum;
+            - Planejar e aconselhar implementações de Scrum dentro da organização;
+            - Ajudar os funcionários e os stakeholders a compreender e aplicar uma abordagem empírica para trabalhos complexos; e,
+            - Remover barreiras entre stakeholders e Scrum Teams.
+
+- Eventos Scrum
+    - A Sprint
+        - Sprints são o coração do Scrum, onde ideias são transformadas em valor.
+        - São eventos de duração fixa de um mês ou menos para criar consistência. Uma nova Sprint começa imediatamente após a conclusão da Sprint anterior.
+        - Todo o trabalho necessário para atingir a meta do Produto, incluindo Sprint Planning, Daily Scrums, Sprint Review e Sprint Retrospective, acontece dentro de Sprints.
+        - Durante a Sprint:
+            - Nenhuma mudança é feita que coloque em risco a meta da Sprint;
+            - A qualidade não diminui;
+            - O Product Backlog é refinado conforme necessário; e,
+            - O escopo pode ser esclarecido e renegociado com o Product Owner conforme mais é aprendido.
+        - Sprints permitem previsibilidade, garantindo a inspeção e adaptação do progresso em direção a uma meta do Produto ao menos uma vez por mês. Quando o horizonte de uma Sprint é muito longo, a meta da Sprint pode se tornar inválida, a complexidade pode aumentar e o risco pode aumentar. Sprints mais curtas podem ser empregados para gerar mais ciclos de aprendizagem e limitar os riscos de custo e esforço a um período de tempo menor. Cada Sprint pode ser considerado um projeto curto.
+        - Existem várias práticas para prever o progresso, como burn-downs, burn-ups ou cumulative flows. Embora comprovadamente úteis, eles não substituem a importância do empirismo. Em ambientes complexos, o que acontecerá é desconhecido. Somente o que já aconteceu pode ser usado para a tomada de decisão voltada para o futuro.
+        - Uma Sprint pode ser cancelada se a Meta da Sprint se tornar obsoleta. Apenas o Product
+Owner tem autoridade para cancelar a Sprint.
+
+    - Sprint Planning
+        - A Sprint Planning inicia a Sprint ao definir o trabalho a ser realizado na Sprint. Este plano resultante é criado pelo trabalho colaborativo de todo o Scrum Team.
+        - O Product Owner garante que os participantes estejam preparados para discutir os itens mais importantes do Product Backlog e como eles são mapeados para a Meta do Produto. O Scrum Team também pode convidar outras pessoas para participar da Sprint Planning para fornecer conselhos.
+        - A Sprint Planning aborda os seguintes tópicos:
+            - Tópico um: Por que esta Sprint é valiosa?
+                - O Product Owner propõe como o produto pode aumentar seu valor e utilidade na Sprint atual. Todo o Scrum Team então colabora para definir uma Meta da Sprint que comunica porque a Sprint é valiosa para os stakeholders. A meta da Sprint deve ser finalizada antes do final da Sprint Planning.
+            - Tópico dois: O que pode ser feito nesta Sprint? 
+                - Por meio de discussão com o Product Owner, os Developers selecionam itens do Product Backlog para incluir na Sprint atual. O Scrum Team pode refinar esses itens durante este processo, o que aumenta a compreensão e a confiança.
+            - Tópico três: Como o trabalho escolhido será realizado?
+                - Para cada item do Product Backlog selecionado, os Developers planejam o trabalho necessário para criar um Incremento que atenda à Definição de Pronto. Isso geralmente é feito decompondo itens do Product Backlog em itens de trabalho menores de um dia ou menos. A forma como isso é feito fica a critério exclusivo dos Developers . Ninguém mais diz a eles como transformar itens do Product Backlog em incrementos de valor.
+                - A Meta da Sprint, os itens do Product Backlog selecionados para a Sprint, mais o plano para entregá-los são chamados juntos de Sprint Backlog.
+                - A Sprint Planning tem um Timebox definido com duração máxima de de oito horas para uma Sprint de um mês. Para Sprints mais curtas, o evento geralmente é mais curto.
+
+
+
+    - Daily Scrum
+        - O propósito da Daily Scrum é inspecionar o progresso em direção a Meta da Sprint e adaptar o Sprint Backlog conforme necessário, ajustando o próximo trabalho planejado.
+        - A Daily Scrum é um evento de 15 minutos para os Developers do Scrum Team. Para reduzir a complexidade, é realizado no mesmo horário e local, todos os dias úteis da Sprint. Se o Product Owner ou o Scrum Master estão trabalhando ativamente nos itens do Sprint Backlog, eles participam como Developers.
+        - Os Developers podem selecionar qualquer estrutura e técnicas que quiserem, desde que seu Daily Scrum se concentre no progresso em direção a Meta da Sprint e produza um plano de ação para o próximo dia de trabalho. Isso cria foco e melhora o autogerenciamento.
+        - As Daily Scrums melhoram as comunicações, identificam os impedimentos, promovem a rápida tomada de decisões e consequentemente, eliminam a necessidade de outras reuniões.
+        - A Daily Scrum não é o único momento em que os Developers podem ajustar seu plano. Eles costumam se reunir ao longo do dia para discussões mais detalhadas sobre a adaptação ou replanejamento do resto do trabalho da Sprint. 
+
+
+
+    - Sprint Review
+        - O propósito da Sprint Review é inspecionar o resultado da Sprint e determinar as adaptações futuras. O Scrum Team apresenta os resultados de seu trabalho para os principais stakeholders e o progresso em direção a Meta do Produto é discutido.
+        - Durante o evento, o Scrum Team e os stakeholders revisam o que foi realizado na Sprint e o que mudou em seu ambiente. Com base nessas informações, os participantes colaboram sobre o que fazer a seguir. O Product Backlog também pode ser ajustado para atender a novas
+oportunidades. A Sprint Review é uma sessão de trabalho e o Scrum Team deve evitar limitá-la a uma apresentação.
+        - A Sprint Review é o penúltimo evento da Sprint e tem um Timebox com prazo máximo de quatro horas para uma Sprint de um mês. Para Sprints mais curtas, o evento geralmente é mais curto. 
+
+
+
+    - Sprint Retrospective
+        - O propósito da Sprint Retrospective é planejar maneiras de aumentar a qualidade e a eficácia.
+        - O Scrum Team inspeciona como foi a última Sprint em relação a indivíduos, interações, processos, ferramentas e sua Definição de Pronto. Os elementos inspecionados geralmente variam com o domínio de trabalho. As suposições que os desviaram são identificadas e suas origens exploradas. O Scrum Team discute o que deu certo durante a Sprint, quais problemas encontraram e como esses problemas foram (ou não) resolvidos.
+        - O Scrum Team identifica as mudanças mais úteis para melhorar sua eficácia. As melhorias mais impactantes são endereçadas o mais rápido possível. Essas podem até ser adicionadas ao Sprint Backlog para a próxima Sprint.
+        - A Sprint Retrospective conclui a Sprint. É limitada pelo Timebox de no máximo três horas para uma Sprint de um mês. Para Sprints mais curtas, o evento geralmente é mais curto. 
+
+    - Scrum Artifacts
+        - Os artefatos do Scrum representam trabalho ou valor. Eles são projetados para maximizar a transparência das principais informações. Assim, todos os que os inspecionam têm a mesma base para adaptação.
+        - Cada artefato contém um compromisso para garantir que ele forneça informações que aumentem a transparência e o foco contra o qual o progresso pode ser medido:
+            - Para o Product Backlog, é a Meta do produto.
+            - Para o Sprint Backlog, é a Meta da Sprint.
+            - Para o incremento, é a Definição de Pronto.
+        - Esses compromissos existem para reforçar o empirismo e os valores Scrum para o Scrum Team, e seus stakeholders.  
+
+    - Product Backlog 
+        - O Product Backlog é uma lista ordenada e emergente do que é necessário para melhorar o produto. É a única fonte de trabalho realizado pelo Scrum Team.
+        - Os itens do Product Backlog que podem ser realizados pelo Scrum Team em uma Sprint são considerados preparados para seleção no evento Sprint Planning. Eles geralmente adquirem esse grau de transparência após as atividades de refinamento. O Product Backlog refinement é o ato de quebrar e incluir definição adicional aos itens do Product Backlog para ter itens menores e mais precisos. Esta é uma atividade contínua para adicionar detalhes, como descrição, ordem e tamanho. Os atributos geralmente variam de acordo com o domínio de trabalho.
+        - Os Developers que farão o trabalho são responsáveis pelo dimensionamento. O Product Owner pode influenciar os Developers, ajudando-os a entender e selecionar trade-offs (trocas de itens). 
+
+    - Sprint Backlog
+        - O Sprint Backlog é composto pela Meta da Sprint (por que), o conjunto de itens do Product Backlog selecionados para a Sprint (o que), bem como um plano de ação para entregar o Incremento (como).
+        - O Sprint Backlog é um plano feito por e para os Developers. É uma imagem altamente visível, em tempo real do trabalho que os Developers planejam realizar durante a Sprint para atingir a Meta da Sprint. Consequentemente, o Sprint Backlog é atualizado ao longo da Sprint conforme mais é aprendido. Deve ter detalhes suficientes para que eles possam inspecionar seu progresso na Daily Scrum.  
+
+    - Compromisso: Meta da Sprint
+        - A Meta da Sprint é o único objetivo da Sprint. Embora a Meta da Sprint seja um compromisso dos Developers, esta fornece flexibilidade em termos do trabalho exato necessário para alcançá-la. A Meta da Sprint também cria coerência e foco, encorajando o Scrum Team a trabalhar junto ao invés de iniciativas separadas.
+        - A Meta da Sprint é criada durante o evento Sprint Planning e então adicionada ao Sprint Backlog. Conforme os Developers trabalham durante a Sprint, eles mantêm a Meta da Sprint em mente. Se o trabalho acabar sendo diferente do que eles esperavam, eles colaboram com o Product Owner para negociar o escopo do Sprint Backlog dentro da Sprint sem afetar a Meta da Sprint.
