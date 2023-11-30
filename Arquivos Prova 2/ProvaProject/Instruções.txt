@@ -1,0 +1,27 @@
+1º - Colocar p/ agendar automaticamente
+2º - Aba de Projeto > Informações do Projeto > Calendário UTP e Mudar Data Início
+- Arquivos > Informações > Organizador > Calendários > Calendário UTP como Global
+- ALT + Shift + -> (Identar)
+- Iniciar 3 dias antes de terminar 1.1.3 > Predecessoras: 5TI-3 (onde 5 é a ativ predecm (T)érmino (I)nício -3 dias
+- Terminar junto com (terminar com término - TT) > 
+- Iniciar 3 dias antes de terminar 1.2.3 > Leitura: (T)ermina 1.2.3, então (I)nicia -3
+- Alocar os recursos > Planilha de recursos (em baixo do gráfico de Gantt)
+- O normal são 8h, então o Tempo parcial (de 4h) é 50% na Unid. Máxima
+- Custo de R$100, então na Taxa Padrão será 100
+- Caso tenha mais de 1 pessoa no mesmo cargo, aumenta a % (2 analistas = 200% taxa padrão)
+- Mudar o tipo caso seja material (na Unidade do Material - Café: colocar Litro)
+- Volta p/ Gráfico de Gannt > Botão direito nele > Mostrar Divisão > ClqDireito área cinza > Trabalho
+- (!!!) Selecionar Tarefa por Tarefa
+- Trabalho = Quantidade de Horas
+- Milestone = 0 dias
+- Preencher os dados da provinha
+- Adicionar coluna "Custo" e "Trabalho"
+- Relatórios > Custos > Fluxo de Caixa (professor)
+- Exibir > Realçar:Crítica > Colocar os IDs na prova
+
+Outro Exercício
+- Definir linha de base: Projeto > Definir Linha de Base > 
+- Definir Gannt de Controle: Tarefa > Selecionar o gráfico lá em cima
+- No gráfico, botão direito > Linhas de Andamento > Exibir (Na data de status do projeto) > Marcar Plano da linha de base
+- Definir a Data Status: Projeto > Data status
+- 
